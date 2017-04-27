@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/H5ComponentBase.css" />
+		<link rel="stylesheet" href="../css/H5ComponentPolyline.css" />
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #000;
+				font-size: 12px;
+			}
+			
+			.iphone {
+				width: 340px;
+				height: 540px;
+				background-color: #fff;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin: -270px 0 0 -170px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="iphone"></div>
+		
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+		<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="../js/H5ComponentBase.js" ></script>
+		<script type="text/javascript" src="../js/H5ComponentPolyline.js" ></script>	
+			
+		<script type="text/javascript">
+			var cfg = {
+				type: 'polyline',
+				width: 530,
+				height: 400,
+				data: [
+					['JS', .4],
+					['CSS3', .1 ],
+					['HTML5', .2 ],
+					['JQuery', .35 ],
+					['BT', .05],
+					['PHP', .09]
+				],
+				css: {
+					top: 100,
+					opacity: 0
+				},
+				animateIn: {
+					opacity: 1,
+					top: 200
+				},
+				animateOut: {
+					opacity: 0,
+					top: 0
+				},
+				center: true
+			}
+				
+				var h5 = new h5ComponentPolyline('myBarComponent', cfg);
+				$('.iphone').append(h5);
+				
+				var leave = true;
+				$('body').click(function() {
+					leave = !leave;
+					$('.h5_component').trigger(leave ? 'onleave' : 'onload');
+				})
+			</script>
+	</body>
+</html>
