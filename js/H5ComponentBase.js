@@ -9,23 +9,31 @@ var h5ComponentBase = function(name, cfg) {
 	cfg.width && component.width(cfg.width/2);
 	cfg.height && component.height(cfg.height/2);
 	cfg.css && component.css( cfg.css );
-	cfg.bg && component.css('background-image', 'url('+ cfg.bg +')')
+	cfg.bg && component.css('background-image', 'url('+ cfg.bg +')');
 	
 	if(cfg.center === true) {
 		component.css({
-			'margin-left': (cfg.width/4 * -1),
+			'margin-left': (cfg.width/4 * - 1),
 			left: 50 + '%'
 		});
 	}
 	
+	if (typeof cfg.onclick === 'function') {
+		component.on('click', cfg.onclick);
+	}
 	
 	component.on('onload', function() {
-		component.addClass(clsN + '_load').removeClass(clsN  + '_leave');
+		setTimeout(function(){
+			component.addClass(clsN + '_load').removeClass(clsN  + '_leave');
 		cfg.animateIn && component.animate(cfg.animateIn);
+		}, cfg.delay || 0);
+		
 	});
 	component.on('onleave', function() {
-		component.addClass(clsN + '_leave').removeClass(clsN +'_load');
-		cfg.animateOut && component.animate(cfg.animateOut);
+		setTimeout(function(){
+			component.addClass(clsN + '_leave').removeClass(clsN +'_load');
+			cfg.animateOut && component.animate(cfg.animateOut);
+		}, cfg.delay || 0);
 	});
 	
 	

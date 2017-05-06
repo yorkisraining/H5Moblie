@@ -18,10 +18,10 @@ var h5ComponentPie = function(name, cfg) {
 	
 	// 底图层
 	ctx.beginPath();
-	ctx.fillStyle = '#eee';
+
 	ctx.lineWidth = 1;
 	ctx.arc(r, r, r, 0, 2*Math.PI);
-	ctx.fill();
+
 	
 	//数据层
 	var canvas = document.createElement('canvas');

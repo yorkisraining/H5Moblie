@@ -22,7 +22,7 @@ var h5ComponentPoint = function(name, cfg) {
 		if (item[3]!==undefined&&item[4]!==undefined) {
 			point.css({
 				'left': item[3],
-				'top': item[4]
+				'top': item[4],
 			});
 		}
 		point.width(per).height(per);

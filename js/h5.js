@@ -22,6 +22,9 @@ var H5 = function() {
 		
 		this.el.append(page);
 		this.pages.push(page);
+		if (typeof this.whenAddPage === 'function') {
+			this.whenAddPage();
+		}
 		return this;
 	};
 	
@@ -38,6 +41,21 @@ var H5 = function() {
 			case 'base':
 				component = new h5ComponentBase(name, cfg);
 			break;
+			case 'polyline':
+				component = new h5ComponentPolyline(name, cfg);
+			break;
+			case 'bar':
+				component = new h5ComponentBar(name, cfg);	
+			break;
+			case 'pie':
+				component = new h5ComponentPie(name, cfg);	
+			break;
+			case 'point':
+				component = new h5ComponentPoint(name, cfg);	
+			break;
+			case 'radar':
+				component = new h5ComponentRadar(name, cfg);		
+			break;
 			
 			default:
 		}
@@ -47,7 +65,7 @@ var H5 = function() {
 	};
 	
 	//H5对象初始化呈现
-	this.loader = function() {
+	this.loader = function(nowpage) {
 		this.el.fullpage({
 			onLeave: function(index, nextIndex, direction){
 				$(this).find('.h5_component').trigger('onleave');
@@ -58,7 +76,9 @@ var H5 = function() {
 		});
 		this.pages[0].find('.h5_component').trigger('onload');
 		this.el.show();
-		
+		if (nowpage) {
+			$.fn.fullpage.moveTo(nowpage);
+		}
 	}
 	
 	return this;
