@@ -103,6 +103,7 @@
 				}
 							
 				h5
+					//index
 					.addPage('face')
 						.addComponent('logo', {
 							center: true,
@@ -110,15 +111,15 @@
 							height: 130,
 							bg: 'img/face_logo.png',
 							css: {
-								top: -100,
+								top: '-10%',
 								opcacity: 0
 							},
 							animateIn: {
-								top: 100,
+								top: '20%',
 								opcacity: 1
 							},
 							animateOut: {
-								top: -100,
+								top: '-10%',
 								opcacity: 0
 							},
 							delay: 1500
@@ -130,7 +131,7 @@
 							bg: 'img/face_slogan.png',
 							css: {
 								opacity: 0,
-								top: 180
+								top: '33%'
 							},
 							animateIn: {
 								opacity: 1
@@ -182,6 +183,7 @@
 							},
 							delay: 500
 						})
+					//construction
 					.addPage()
 						.addComponent('caption', {
 							text:  '核心理念'
@@ -195,15 +197,17 @@
 								opacity: 0,
 								textAlign: 'center',
 								color: 'red',
-								fontSize: '24px'
+								fontSize: '24px',
+								fontFamily: '微软雅黑',
+								top: '15%'
 							},
 							animateIn: {
 								opacity: 1,
-								top: 160
+								top: '26%'
 							},
 							animateOut: {
 								opacity: 0,
-								top: 240
+								top: '15%'
 							}
 							
 						})
@@ -220,16 +224,16 @@
 								fontSize: '15px',
 								lineHeight: '18px',
 								textAlign: 'justify',
-								top: 240
+								bottom: '30%'
 							},
 							text: '测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字',
 								animateIn: {
 									opacity: 1,
-									top: 210
+									bottom: '38%'
 								},
 								animateOut: {
 									opacity: 0,
-									top: 240
+									bottom: '30%'
 								},
 								delay: 500
 							})
@@ -244,7 +248,7 @@
 							},
 							animateIn: {
 								opacity: 1,
-								bottom: 40
+								bottom: '5%'
 							},
 							animateOut: {
 								opacity: 0,
@@ -270,23 +274,24 @@
 								['BT', .05],
 							],
 							css: {
-								top: 100,
+								top: '20%',
 								opacity: 0
 							},
 							animateIn: {
 								opacity: 1,
-								top: 200
+								top: '40%'
 							},
 							animateOut: {
 								opacity: 0,
-								top: 0
-							}		
+								top: '20%'
+							},
+							delay: 300
 						})
 						.addComponent('msg', {
 							text: '前端开发课程占到40%',
 							css: {
 								opacity: 0,
-								top: 150,
+								top: '26%',
 								textAlign: 'center',
 								width: '100%',
 								color: '#ff7676',
@@ -318,16 +323,16 @@
 								['Unity-3D', .3 ],
 							],
 							css: {
-								top: 300,
+								top: '50%',
 								opacity: 0
 							},
 							animateIn: {
 								opacity: 1,
-								top: 180
+								top: '30%'
 							},
 							animateOut: {
 								opacity: 0,
-								top: 300
+								top: '50%'
 							},
 							
 						})		
@@ -335,7 +340,7 @@
 							text: '移动课程Android占到40%',
 							css: {
 								opacity: 0,
-								bottom: 120,
+								top: '75%',
 								textAlign: 'center',
 								width: '100%',
 								color: '#ff7676',
@@ -375,7 +380,7 @@
 							},
 							animateIn: {
 								opacity: 1,
-								top: 180
+								top: '32%'
 							},
 							animateOut: {
 								opacity: 0,
@@ -386,7 +391,7 @@
 							text: 'Javascript课程占到40%',
 							css: {
 								opacity: 0,
-								bottom: 120,
+								top: '75%',
 								textAlign: 'center',
 								width: '100%',
 								color: '#ff7676',
@@ -426,7 +431,7 @@
 							},
 							animateIn: {
 								opacity: 1,
-								top: 180
+								top: '32%'
 							},
 							animateOut: {
 								opacity: 0,
@@ -437,7 +442,7 @@
 							text: 'Javascript课程占到40%(垂直柱图一会儿做)',
 							css: {
 								opacity: 0,
-								bottom: 120,
+								top: '75%',
 								textAlign: 'center',
 								width: '100%',
 								color: '#ff7676',
@@ -471,23 +476,23 @@
 								['PHP', .76]
 							],
 							css: {
-								top: 300,
+								top: '45%',
 								opacity: 0
 							},
 							animateIn: {
 								opacity: 1,
-								top: 180
+								top: '30%'
 							},
 							animateOut: {
 								opacity: 0,
-								top: 300
+								top: '45%'
 							},
 						})
 						.addComponent('msg', {
 							text: 'PHP课程占到40%',
 							css: {
 								opacity: 0,
-								bottom: 120,
+								top: '75%',
 								textAlign: 'center',
 								width: '100%',
 								color: '#ff7676',
