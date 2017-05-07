@@ -22,10 +22,10 @@ var H5_loading = function(images, nowpage) {
 		
 	} else {
 		
-		this._loader++;
+		this._loaded++;
 		$('#rate').text( (this._loaded/this._images*100 >> 0)+ '%' 
 		);
-		if (this._loader < this._images) {
+		if (this._loaded < this._images) {
 			return this;
 		}
 		
