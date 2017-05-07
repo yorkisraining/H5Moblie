@@ -47,6 +47,9 @@ var H5 = function() {
 			case 'bar':
 				component = new h5ComponentBar(name, cfg);	
 			break;
+			case 'bar-v':
+				component = new h5ComponentBarV(name, cfg);	
+			break;
 			case 'pie':
 				component = new h5ComponentPie(name, cfg);	
 			break;
@@ -80,6 +83,8 @@ var H5 = function() {
 			$.fn.fullpage.moveTo(nowpage);
 		}
 	}
+	
+	this.loader = typeof H5_loading == 'function' ? H5_loading : this.loader;
 	
 	return this;
 }

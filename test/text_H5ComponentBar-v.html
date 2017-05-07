@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="../css/H5ComponentBase.css" />
-		<link rel="stylesheet" href="../css/H5ComponentPie.css" />
+		<link rel="stylesheet" href="../css/H5ComponentBar-v.css" />
 		<style type="text/css">
 			body {
 				margin: 0;
@@ -32,22 +32,25 @@
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 		<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="../js/H5ComponentBase.js" ></script>
-		<script type="text/javascript" src="../js/H5ComponentPie.js" ></script>	
+		<script type="text/javascript" src="../js/H5ComponentBar-v.js" ></script>	
 			
 		<script type="text/javascript">
 			var cfg = {
-				type: 'pie',
-				width: 400,
-				height: 400,
+				type: 'bar-v',
+				width: 530,
+				height: 600,
+				center: true,
 				data: [
-					['JS', .4, '#ff7676'],
-					['CSS3', .2 ],
-					['HTML5', .05 ],
-					['JQuery', .2 ],
-					['PHP', .15]
+					['Javascript', .4, '#ff7676'],
+					['HTML/CSS', .2],
+					['CSS3', .1 ],
+					['HTML5', .2 ],
+					['JQuery', .35 ],
+					['Bootstrap', .05],
+					['AngularJs', .09]
 				],
 				css: {
-					top: 300,
+					top: 0,
 					opacity: 0
 				},
 				animateIn: {
@@ -56,12 +59,12 @@
 				},
 				animateOut: {
 					opacity: 0,
-					top: 300
+					top: 0
 				},
-				center: true
+				
 			}
 				
-				var h5 = new h5ComponentPie('myBarComponent', cfg);
+				var h5 = new h5ComponentBarV('myBarComponent', cfg);
 				$('.iphone').append(h5);
 				
 				var leave = true;

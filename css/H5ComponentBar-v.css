@@ -1,0 +1,67 @@
+ /*垂直水平柱图*/
+.h5_component_bar-v {
+	transform: rotate(270deg);
+}
+
+.h5_component_bar-v .line {
+	height: 15px;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	line-height: 15px;
+	margin-bottom: 15px;
+}
+
+.h5_component_bar-v .name {
+	width: 60px;
+	color: #000000;
+	text-align: left;
+	transform: rotate(164deg);
+    transform-origin: right bottom;
+    position: absolute;
+    left: -50%;
+}
+
+.h5_component_bar-v .rate {
+	height: 15px;
+	margin-left: 5px;
+	float: left;
+	position: relative;
+	
+}
+
+.h5_component_bar-v .rate .bg {
+	background-color: #99c0ff;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 3px;
+}
+
+.h5_component_bar-v .per {
+	width: 20px;
+	color: #99c0ff;
+	margin-left: 5px;
+	float: left;
+	opacity: 0;
+	transform: rotate(90deg);
+}
+
+.h5_component_bar-v_load .rate .bg {
+	-webkit-transition: all 1s .7s;
+	width: 100%;
+}
+
+.h5_component_bar-v_leave .rate .bg {
+	width: 0%;
+}
+
+.h5_component_bar-v_load .per {
+	-webkit-transition: all 1s 1.7s;
+	-webkit-opacity: 1;
+}
+
+.h5_component_bar-v_leave .per {
+	-webkit-opacity: 0;
+}

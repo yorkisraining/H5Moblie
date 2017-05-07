@@ -11,21 +11,12 @@
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 		<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<script src="https://cdn.bootcss.com/fullPage.js/2.9.4/jquery.fullpage.js"></script>
-		
-	<!--H5组件相关资源-->
-	<script type="text/javascript">
-			var res = ['Base', 'Bar', 'Point', 'Polyline', 'Radar', 'Pie'];
-			var html = [];
-			for (s in res) {
-				html.push('<script type="text/javascript" src="js/H5Component'+res[s]+'.js" ><\/script>');
-				html.push('<link rel="stylesheet" href="css/H5Component'+res[s]+'.css" \/>');
-			}
-			document.write( html.join('') );
-		</script>
 	
 	<!--H5对象：进行内容管理-->
 	<script type="text/javascript" src="js/h5.js" ></script>
 	<link rel="stylesheet" href="css/h5.css" />
+	<script type="text/javascript" src="js/loading.js" ></script>
+	<link rel="stylesheet" href="css/loading.css" />
 	
 	<!--页面逻辑的样式-->
 	<style type="text/css">
@@ -74,7 +65,26 @@
 		}
 	</style>
 	
-	<!--主要逻辑-->
+	<body>
+		
+		<div class="loading">
+			<div class="double-bouncel1"></div>
+			<div class="double-bouncel2"></div>
+			<div id="rate">0%</div>
+		</div>
+		
+		<!--H5组件相关资源-->
+		<script type="text/javascript">
+			var res = ['Base', 'Bar', 'Bar-v', 'Point', 'Polyline', 'Radar', 'Pie'];
+			var html = [];
+			for (s in res) {
+				html.push('<script type="text/javascript" src="js/H5Component'+res[s]+'.js" ><\/script>');
+				html.push('<link rel="stylesheet" href="css/H5Component'+res[s]+'.css" \/>');
+			}
+			document.write( html.join('') );
+		</script>
+		
+		<!--主要逻辑-->
 	<script type="text/javascript">
 		
 		$(function() {
@@ -411,8 +421,8 @@
 						.addComponent('caption', {
 							text: '前端开发课程'
 						})
-						.addComponent('bar', {
-							type: 'bar',
+						.addComponent('bar-v', {
+							type: 'bar-v',
 							center: true,
 							width: 530,
 							height: 600,
@@ -426,23 +436,23 @@
 								['AngularJs', .09]
 							],
 							css: {
-								top: 0,
+								bottom: 0,
 								opacity: 0
 							},
 							animateIn: {
 								opacity: 1,
-								top: '32%'
+								bottom: '25%'
 							},
 							animateOut: {
 								opacity: 0,
-								top: 0
+								bottom: 0
 							},	
 						})
 						.addComponent('msg', {
-							text: 'Javascript课程占到40%(垂直柱图一会儿做)',
+							text: 'Javascript课程占到40%',
 							css: {
 								opacity: 0,
-								top: '75%',
+								top: '30%',
 								textAlign: 'center',
 								width: '100%',
 								color: '#ff7676',
@@ -508,10 +518,10 @@
 							}
 						})
 					//ring
-					.addPage()
-						.addComponent('caption', {
-							text: '报名人数过万'
-						})	
+//					.addPage()
+//						.addComponent('caption', {
+//							text: '报名人数过万'
+//						})	
 					//point
 					.addPage()
 						.addComponent('caption', {
@@ -607,13 +617,9 @@
 								$.fn.fullpage.moveTo(1);
 							}
 						})
-					.loader()
+					.loader(['img/description_bg.gif', 'img/face_bg.png', 'img/face_img_left.png', 'img/face_img_right.png', 'img/face_logo.png', 'img/face_slogan.png', 'img/foot.png', 'img/p1_people.png', 'img/page_bg.png', 'img/page_caption_bg.png', 'img/tail_back.png', 'img/tail_logo.png', 'img/tail_share.png', 'img/tail_slogan.png'])
 		});
 		
-	</script>
-	<body>
-		
-		
-		
+	</script>	
 	</body>
 </html>

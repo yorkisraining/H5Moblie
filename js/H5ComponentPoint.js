@@ -25,9 +25,18 @@ var h5ComponentPoint = function(name, cfg) {
 				'top': item[4],
 			});
 		}
+		point.css('transition','all 1s '+index*.5+'s');
 		point.width(per).height(per);
 		component.append(point);
 	})
+	
+	component.find('.point').on('click',function(){
+
+        component.find('.point').removeClass('point_focus');
+        $(this).addClass('point_focus');
+
+        return false;
+   }).eq(0).addClass('point_focus')
 	
 	return component;
 }

@@ -93,6 +93,8 @@ var h5ComponentPie = function(name, cfg) {
 	
 	ctx.fillStyle = '#fff';
 	ctx.lineWidth = 1;
+	ctx.arc(r, r, r, 0, 2*Math.PI);
+	ctx.fill();
 	
 	function draw(per) {
 		
@@ -106,7 +108,6 @@ var h5ComponentPie = function(name, cfg) {
 		} else {
 			ctx.arc(r, r, r, starAngle, starAngle+2*Math.PI*per, true);
 		}
-		
 		
 		ctx.fill();
 		

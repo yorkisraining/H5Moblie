@@ -12,9 +12,11 @@
 	height: 100%;
 }
 
-.h5_component_pie .text {
-	position: absolute;
-	text-align: center;
-	z-index: 999;
-	height: 24px;
+.h5_component_pie .text{
+    position: absolute;
+    z-index: 99;
+    font-size: 12px;
+    text-align: center;
+    height: 24px;
+    transition: all 10s;
 }
