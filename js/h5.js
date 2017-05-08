@@ -1,5 +1,5 @@
 //内容管理对象
-
+var jdata = [];
 var H5 = function() {
 	this.id = ('h5_' + Math.random()).replace('.0','_');
 	this.el = $('<div class="h5" id"' + this.id + '"></div>').hide();
@@ -10,14 +10,15 @@ var H5 = function() {
 	// name 组件名称，加入className中
 	//text 页内默认文本（测试用）
 	// return H5对象，可以重复使用H5对象支持的方法
-	this.addPage = function(name, text) {
+	this.addPage = function(name, texts) {
+		jdata.push({isPage: true, name: name, texts: texts});
 		var page = $('<div class="h5_page section"></div>');
 		
 		if (name != undefined) {
 			page.addClass('h5_page_' + name);
 		}
-		if (text != undefined) {
-			page.text(text);
+		if (texts != undefined) {
+			page.text(texts);
 		}
 		
 		this.el.append(page);
@@ -30,6 +31,7 @@ var H5 = function() {
 	
 	//新增组件
 	this.addComponent = function(name, cfg) {
+		jdata.push({isPage: false, name: name, cfg: cfg});
 		var cfg = cfg || {};
 		cfg = $.extend({
 			type: 'base'

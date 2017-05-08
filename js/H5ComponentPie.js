@@ -31,7 +31,7 @@ var h5ComponentPie = function(name, cfg) {
 	$(canvas).css('z-index', 2);
 	component.append(canvas);
 	
-	var colors = ['red', 'green', 'blue', 'orange', 'gray'];
+	var colors = ['#5ddbd8', '#99c0ff', '#ffad69'];
 	var starAngle = 1.5 * Math.PI;
 	var endAngle = 0;
 	var allAngle = 2*Math.PI;
@@ -59,7 +59,7 @@ var h5ComponentPie = function(name, cfg) {
 		var texts = $('<div class="text"></div>');
 		texts.text(cfg.data[i][0]);
 		var per = $('<div class="per"></div>');
-		per.text(cfg.data[i][1] * 100 + '%');
+		per.text((cfg.data[i][1] * 100 >> 0) + '%');
 		texts.append(per);
 		
 		var x = r + Math.sin(.5*Math.PI - starAngle) * r;
